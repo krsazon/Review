@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\KristianRex\Desktop\HotelSweetOJT\HotelV3\Hotel\obj\Debug\
+C:\Users\KristianRex\Desktop\Potek\Review\Hotel\obj\Debug\
 Hotel
 none
 false
 DEBUG;TRACE
-C:\Users\KristianRex\Desktop\HotelSweetOJT\HotelV3\Hotel\App.xaml
+C:\Users\KristianRex\Desktop\Potek\Review\Hotel\App.xaml
 55751330112
 
 101-1953427548
-54-1531924375
+54-1631517669
 Booking\Page\CancelledAppointmentsPage.xaml;Booking\Page\EntriesPage.xaml;Booking\Page\ReservationPage.xaml;Booking\SubPage\FolioPage.xaml;Booking\SubPage\RoomDescriptionPage.xaml;Booking\SubPage\ViewReservationPage.xaml;Booking\Page\CheckOutPage.xaml;Booking\Windows\AdminPermissionWindow.xaml;Booking\Windows\CheckInWindow.xaml;Booking\Windows\EditReservationWindow.xaml;Booking\Windows\PaymentWindow.xaml;Booking\Windows\ReservationListWindow.xaml;Booking\Windows\ReservationWindow.xaml;Booking\Windows\RoomListWindow.xaml;Booking\Windows\RoomSelectorWindow.xaml;Booking\Windows\TransactionItemWindow.xaml;Booking\Windows\TransferWindow.xaml;MainWindow.xaml;MasterData\Page\DiscountPage.xaml;MasterData\Page\HolidayRatePage.xaml;MasterData\Page\ItemGroupPage.xaml;MasterData\Page\ItemPage.xaml;MasterData\Page\OccupancyRatePage.xaml;MasterData\Page\RoomEquipmentPage.xaml;MasterData\Page\RoomPage.xaml;MasterData\Page\RoomTypePage.xaml;MasterData\Page\StaffPage.xaml;MasterData\Page\StaffPositionPage.xaml;MasterData\Windows\DiscountsWindow.xaml;MasterData\Windows\DiscountWindow.xaml;MasterData\Windows\HolidayRateWindow.xaml;MasterData\Windows\ImportEquipmentWindow.xaml;MasterData\Windows\ItemGroupListWindow.xaml;MasterData\Windows\ItemWindow.xaml;MasterData\Windows\OccupancyRateWindow.xaml;MasterData\Windows\RoomEquipmentWindow.xaml;MasterData\Windows\RoomTypeRateWindow.xaml;MasterData\Windows\RoomTypeWindow.xaml;MasterData\Windows\RoomWindow.xaml;MasterData\Windows\StaffPositionWindow.xaml;MasterData\Windows\StaffWindow.xaml;Shared\Page\LoginPage.xaml;Shared\Page\MainMenuPage.xaml;Shared\Page\MainViewPage.xaml;Shared\Windows\MessageBoxNotification.xaml;Shared\Windows\MessageBoxYesNo.xaml;Shared\Windows\SystemParameterWindow.xaml;UserControl1.xaml;Users\SubViews\RestrictionPage.xaml;Users\Views\UserGroupView.xaml;Users\Views\UserView.xaml;Users\Windows\UserGroupWindow.xaml;Users\Windows\UserWindow.xaml;Window1.xaml;Window2.xaml;
 
 False
