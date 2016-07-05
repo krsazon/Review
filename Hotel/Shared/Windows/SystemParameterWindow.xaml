@@ -1,0 +1,71 @@
+﻿<Window xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduler"  x:Class="Hotel.Shared.Windows.SystemParameterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" dx:ThemeManager.ThemeName="Office2013"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+        Title="SystemParameterWindow" Background="Gray" Height="500" Width="450" WindowStyle="None" ResizeMode="NoResize" Loaded="Window_Loaded" Closing="Window_Closing">
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+            <Button x:Name="btnSave" DockPanel.Dock="Bottom" Style="{DynamicResource ButtonEllipseTransparent}" Height="50" Width="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20 0 5 20" Click="btnSave_Click">
+                <Image Source="/Images/Save2.png"/>
+            </Button>
+            <Button x:Name="btnClose" Style="{DynamicResource ButtonEllipseTransparent}" Height="50" Width="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5 0 0 20" Click="btnClose_Click">
+                <Image Source="/Images/Close.png"/>
+            </Button>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Text="System Parameters" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Segoe UI" FontWeight="Bold" Foreground="White" FontSize="25" Margin="10 40 10 10"/>
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" FontFamily="Segoe UI" FontWeight="Bold" Text="PROCESSING NUMBER SETTINGS" Margin="20 5" Padding="0 5"/>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="HOTEL NAME" Width="160" Margin="3" Padding="0 5"/>
+                <dxe:TextEdit x:Name="txtName" Grid.Column="1" Margin="3" Padding="0 5" FontFamily="Segoe UI" Width="212" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="HOTEL ADDRESS" Width="160" Margin="3" Padding="0 5"/>
+                <dxe:TextEdit x:Name="txtAddress" Grid.Column="1" Margin="3" Padding="0 5" FontFamily="Segoe UI" Width="212"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="HOTEL DESCRIPTION" Width="160" Margin="3" Padding="0 5"/>
+                <dxe:TextEdit x:Name="txtDescription" Grid.Column="1" Margin="3" Padding="0 5" FontFamily="Segoe UI" Height="80" Width="212" VerticalContentAlignment="Top" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="TIME POLICY" Width="160" Margin="3" Padding="0 5"/>
+                <dxe:CheckEdit x:Name="chTime" Checked="CheckEdit_Checked" Unchecked="CheckEdit_Unchecked" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="CHECK IN TIME" Width="160" Margin="3" Padding="0 5"/>
+                <dxe:DateEdit x:Name="txtCheckInTime1" Grid.Column="1" Margin="3"  Padding="0 5" FontFamily="Segoe UI" Width="105" Mask="t" IsEnabled="False" MaskType="DateTime" EditValueChanged="txtCheckInTime1_EditValueChanged" MaskUseAsDisplayFormat="True" EditValue="" >
+                <dxe:DateEdit.StyleSettings>
+                    <dxe:DateEditPickerStyleSettings/>
+                </dxe:DateEdit.StyleSettings>
+                </dxe:DateEdit>
+                <dxe:DateEdit x:Name="txtCheckInTime2" Grid.Column="1" Margin="3" MaskUseAsDisplayFormat="True" Padding="0 5" FontFamily="Segoe UI" Width="105" Mask="t" IsEnabled="False" EditValue="">
+                    <dxe:DateEdit.StyleSettings>
+                        <dxe:DateEditPickerStyleSettings/>
+                    </dxe:DateEdit.StyleSettings>
+                </dxe:DateEdit>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="CHECK OUT TIME" Width="160" Margin="3" Padding="0 5"/>
+                <dxe:DateEdit x:Name="txtCheckOutTime1" Grid.Column="1" Margin="3" MaskUseAsDisplayFormat="True" Padding="0 5" FontFamily="Segoe UI" Width="105" Mask="t" IsEnabled="False">
+                    <dxe:DateEdit.StyleSettings>
+                        <dxe:DateEditPickerStyleSettings/>
+                    </dxe:DateEdit.StyleSettings>
+                </dxe:DateEdit>
+                <dxe:DateEdit x:Name="txtCheckOutTime2" Grid.Column="1" Margin="3" MaskUseAsDisplayFormat="True" Padding="0 5" FontFamily="Segoe UI" Width="105" Mask="t" IsEnabled="False">
+                    <dxe:DateEdit.StyleSettings>
+                        <dxe:DateEditPickerStyleSettings/>
+                    </dxe:DateEdit.StyleSettings>
+                </dxe:DateEdit>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="PET POLICY" Width="160" Margin="3" Padding="0 5"/>
+                <dxe:CheckEdit x:Name="chPet" Checked="CheckEdit_Checked_1" Unchecked="CheckEdit_Unchecked_1" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="PET RATE" Width="160" Margin="3" Padding="0 5"/>
+                <dxe:TextEdit x:Name="txtPet" Grid.Column="1" Margin="3" Padding="0 5" FontFamily="Segoe UI" Width="212" IsEnabled="False" Mask="n2" MaskUseAsDisplayFormat="True" MaskType="Numeric"/>
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>

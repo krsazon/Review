@@ -1,0 +1,55 @@
+﻿<Window x:Class="Hotel.Booking.Windows.PaymentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" dx:ThemeManager.ThemeName="Office2013"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+         Title="PaymentWindow" Background="Gray" Height="500" Width="450"  WindowStyle="None" ResizeMode="NoResize"  Closing="Window_Closing" Loaded="Window_Loaded">
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+            <Button x:Name="btnSave" DockPanel.Dock="Bottom" Style="{DynamicResource ButtonEllipseTransparent}" Height="50" Width="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20 0 5 20" Click="btnSave_Click">
+                <Image Source="/Images/Save2.png"/>
+            </Button>
+            <Button x:Name="btnClose" Style="{DynamicResource ButtonEllipseTransparent}" Height="50" Width="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5 0 0 20" Click="btnClose_Click">
+                <Image Source="/Images/Close.png"/>
+            </Button>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Text="PAYMENT WINDOW" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Segoe UI" FontWeight="Bold" Foreground="White" FontSize="25" Margin="10 40 10 10"/>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Width="117" Margin="3" Padding="0 5"><Run Language="en-ph" Text="ROOM CHARGE"/></TextBlock>
+                <dxe:SpinEdit Name="spnRoomCharge" Margin="27,3,0,7" Height="30" IsReadOnly="True" MaskUseAsDisplayFormat="True" Width="250"  />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="FBO CHARGE" Width="117" Margin="3" Padding="0 5"/>
+                <dxe:SpinEdit Name="spnFBOCharge" Margin="27,3,0,7" Height="30" Width="250" IsReadOnly="True" MaskUseAsDisplayFormat="True" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="APPLY DISCOUNT" Width="117" Margin="3" Padding="0 5"/>
+                <dxe:ComboBoxEdit Name="cmbApplyDiscount" Margin="27,3,0,7" Height="30" Width="200" IsEnabled="False" />
+                <Button Style="{DynamicResource ButtonMetroStyle1}" Background="Silver" Name="btnUpdate"  Margin="5" Width="50" Height="30" Click="btnUpdate_Click">
+                    <Image Source="/Images/PencilWhite.png"/>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="DISCOUNT NO." Width="117" Margin="3" Padding="0 5"/>
+                <dxe:TextEdit Name="txtDiscountCardNumber"  Margin="27,3,0,7" Width="250" Height="30"  />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="LESS DISCOUNT" Width="117" Margin="3" Padding="0 5"/>
+                <dxe:SpinEdit Name="spnLessDiscount" Margin="27,3,0,7" Width="250" Height="30" IsReadOnly="True" MaskUseAsDisplayFormat="True" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="NET AMOUNT" Width="117" Margin="3" Padding="0 5"/>
+                <dxe:SpinEdit Name="spnNetAmount" Margin="27,3,0,7" Width="250" Height="30" IsReadOnly="True" MaskUseAsDisplayFormat="True"  />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="TOTAL AMOUNT" Width="117" Margin="3" Padding="0 5"/>
+                <dxe:SpinEdit Name="spnTotal" Margin="27,3,0,7" Height="30" Width="250" EditValueChanged="spnTotal_EditValueChanged" FontSize="20" MaskUseAsDisplayFormat="True" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="CHANGE" Width="117" Margin="3" Padding="0 5"/>
+                <dxe:SpinEdit Name="spnChange" Margin="27,3,0,7" Width="250"  Height="30" IsReadOnly="True" MaskUseAsDisplayFormat="True" />
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>

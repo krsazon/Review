@@ -1,0 +1,57 @@
+﻿<Window x:Class="Hotel.Booking.Windows.TransactionItemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" dx:ThemeManager.ThemeName="Office2013"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        Title="TransactionItemWindow"  Height="400" Width="400" Background="Gray" WindowStyle="None" ResizeMode="NoResize" Loaded="Window_Loaded" Closing="Window_Closing">
+   
+    <DockPanel>
+        
+    <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="260"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text=" Item Order Details" Grid.ColumnSpan="2" Grid.Row="0" VerticalAlignment="Center" Padding="5" FontFamily="Segoe UI" FontWeight="Bold" Foreground="White" FontSize="25"/>
+            <Label Content="Item Group" Grid.Row="1" VerticalAlignment="Center" Padding="5"  Foreground="White" FontFamily="Segoe UI" Width="117"/>
+            <Label Content="Item Description" Grid.Row="2" VerticalAlignment="Center" Padding="5" Foreground="White" FontFamily="Segoe UI" Width="117"/>
+            <Label Content="Unit Price" Grid.Row="3" VerticalAlignment="Center" Padding="5" Foreground="White" FontFamily="Segoe UI" Width="117"/>
+            <Label Content="Quantity" VerticalAlignment="Center" Grid.Row="4" Padding="5" Foreground="White" FontFamily="Segoe UI" Width="117"/>
+            <Label Content="Total Price" Grid.Row="5" Padding="5" VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Width="117"/>
+            <Label Content="Reference" Grid.Row="6" Padding="5" VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Width="117"/>
+
+            <dxe:ComboBoxEdit Name="cmbItemGroup" Margin="0,5,0,5" Width="250" HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Height="30" SelectedIndexChanged="cmbItemGroup_SelectedIndexChanged" />
+            <dxe:ComboBoxEdit Name="cmbItems" Margin="0,5,0,5" Width="250" HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Height="30" SelectedIndexChanged="cmbItems_SelectedIndexChanged" />
+            <dxe:TextEdit Name="txtUnit" Margin="0,5,0,5" Width="250" HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" Height="30" />
+            <dxe:SpinEdit Name="spnQuantity" Width="250" Margin="0,5,0,5" HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" Height="30" EditValueChanged="spnQuantity_EditValueChanged" />
+            <dxe:TextEdit Name="txtPrice" Margin="0,5,0,5" Width="250" HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" Height="30" />
+            <dxe:DateEdit Name="dtCheckInDate" Margin="0,5,0,5" Width="250" HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6" Height="30" />
+            <dxe:TextEdit Name="txtReference" Margin="0,5,0,5" Width="250" HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="7" Height="30" />
+
+        </Grid>
+
+        <Grid DockPanel.Dock="Bottom" HorizontalAlignment="Left">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Name="btnOk" Style="{DynamicResource ButtonEllipseTransparent}" Grid.Column="0" Margin="5" Height="50" Width="50" Click="btnOk_Click">
+                <Image Source="/Images/Check-03.png"/>
+            </Button>
+            <Button Name="Cancel" Style="{DynamicResource ButtonEllipseTransparent}" Grid.Column="1" Margin="5" Height="50" Width="50" Click="btnCancel_Click">
+                <Image Source="/Images/Close.png"/>
+            </Button>
+        </Grid>
+    </DockPanel>
+</Window>

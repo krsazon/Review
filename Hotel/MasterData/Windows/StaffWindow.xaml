@@ -1,0 +1,29 @@
+﻿<Window x:Class="Hotel.MasterData.Windows.StaffWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" dx:ThemeManager.ThemeName="Office2013"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        Title="StaffWindow" Background="Gray" Height="500" Width="450"  WindowStyle="None" ResizeMode="NoResize" Loaded="Window_Loaded" Closing="Window_Closing">
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+            <Button x:Name="btnSave" DockPanel.Dock="Bottom" Style="{DynamicResource ButtonEllipseTransparent}" Height="50" Width="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20 0 5 20" Click="btnSave_Click">
+                <Image Source="/Images/Save2.png"/>
+            </Button>
+            <Button x:Name="btnClose" Style="{DynamicResource ButtonEllipseTransparent}" Height="50" Width="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5 0 0 20" Click="btnClose_Click">
+                <Image Source="/Images/Close.png"/>
+            </Button>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Text="STAFF " Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Segoe UI" FontWeight="Bold" Foreground="White" FontSize="25" Margin="10 40 10 10"/>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="STAFF NAME" Width="117" Margin="3" Padding="0 5"/>
+                <dxe:TextEdit x:Name="txtStaffName" Grid.Column="1" Margin="3" Padding="0 5" FontFamily="Segoe UI" Width="255"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="STAFF POSITION" Width="117" Margin="3" Padding="0 5"/>
+                <dxe:ComboBoxEdit x:Name="txtStaffPosition" Grid.Column="1" Margin="3" Padding="0 5" FontFamily="Segoe UI" Width="255" IsTextEditable="False">
+                </dxe:ComboBoxEdit>
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>

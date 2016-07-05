@@ -1,0 +1,119 @@
+﻿<UserControl x:Class="Hotel.MasterData.Page.OccupancyRatePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+           xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" dxc:ThemeManager.ThemeName="Office2013" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1100" Loaded="UserControl_Loaded">
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="35*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.ColumnSpan="2">
+            <TextBlock Text="Occupancy Rate List" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Segoe UI" FontWeight="Bold" Foreground="#FF088EFF" FontSize="25" Margin="10,10,0,6"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBox x:Name="txtSearch" Width="150" Margin="5" Height="25" Style="{DynamicResource TextBoxRoundedStyle1}" BorderBrush="#FF088EFF" BorderThickness="2"/>
+                <Button x:Name="btnSearch" Margin="5" Height="40" Width="40" Style="{DynamicResource ResourceKey=ButtonEllipseTransparent}" Click="btnSearch_Click">
+                    <Image Source="/Images/Blue-Find.png" Stretch="Uniform"/>
+                </Button>
+                <Button x:Name="btnReload" Margin="5" Height="40" Width="40" Style="{DynamicResource ResourceKey=ButtonEllipseTransparent}" Click="btnReload_Click">
+                    <Image Source="/images/Blue-Reload.png" Stretch="Uniform"/>
+                </Button>
+                <Button x:Name="btnPrint" Margin="5" Height="40" Width="40" Style="{DynamicResource ResourceKey=ButtonEllipseTransparent}" >
+                    <Image Source="/images/Blue-Printer.png" Stretch="Uniform"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Border Grid.Row="1" Grid.RowSpan="2" Padding="10" Width="90">
+            <Grid>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <StackPanel Margin="0 0 0 5">
+                        <Button x:Name="btnAdd" Margin="5" Height="50" Width="50" Style="{DynamicResource ResourceKey=ButtonEllipseTransparent}" Click="btnAdd_Click">
+                            <Image Source="/images/Blue-Plus.png" Stretch="Uniform"/>
+                        </Button>
+                        <TextBlock Text="ADD" FontFamily="Segoe UI" FontSize="13" FontWeight="SemiBold" Foreground="#0096ff" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Margin="0 0 0 5">
+                        <Button x:Name="btnEdit" Margin="5" Height="50" Width="50" Style="{DynamicResource ResourceKey=ButtonEllipseTransparent}" Click="btnEdit_Click">
+                            <Image Source="/images/Blue-Edit.png" Stretch="Uniform"/>
+                        </Button>
+                        <TextBlock Text="EDIT" FontFamily="Segoe UI" FontSize="13" FontWeight="SemiBold" Foreground="#0096ff" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Margin="0 0 0 5">
+                        <Button x:Name="btnDelete" Margin="5" Height="50" Width="53" Style="{DynamicResource ResourceKey=ButtonEllipseTransparent}" Click="btnDelete_Click">
+                            <Image Source="/images/Blue-Delete.png" Stretch="Uniform"/>
+                        </Button>
+                        <TextBlock Text="DELETE" FontFamily="Segoe UI" FontSize="13" FontWeight="SemiBold" Foreground="#0096ff" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Margin="0 0 0 5" VerticalAlignment="Bottom">
+                    <Button x:Name="btnHome" Margin="5" Height="50" Width="50" Style="{DynamicResource ResourceKey=ButtonEllipseTransparent}" Click="btnHome_Click">
+                        <Image Source="/images/Blue-Home.png" Stretch="Uniform"/>
+                    </Button>
+                    <TextBlock Text="HOME" FontFamily="Segoe UI" FontSize="13" FontWeight="SemiBold" Foreground="#0096ff" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <dxg:GridControl x:Name="dgOccupancyRate" Grid.Row="1" Grid.Column="1" AutoGenerateColumns="None" Margin="3,6,3,30" SelectedItemChanged="dgOccupancyRate_SelectedItemChanged" Grid.RowSpan="2" >
+            <dxg:GridControl.View>
+                <dxg:TableView x:Name="viewOccupancyRates" ShowTotalSummary="False" ShowGroupPanel="False" NavigationStyle="Row" AllowEditing="False"/>
+            </dxg:GridControl.View>
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn Header="Occupancy Rate Id" FieldName="OccupancyRateId" Visible="False" />
+                <dxg:GridColumn Header="Occupancy Rate Name " FieldName="OccupancyRateName"/>
+                <dxg:GridColumn Header="Occupancy Rate Type" FieldName="OccupancyRateType"/>
+                <dxg:GridColumn Header="Occupancy Rate Amount" FieldName="OccupancyRateAmount"/>
+            </dxg:GridControl.Columns>
+        </dxg:GridControl>
+        <Grid Grid.Row="0" Grid.Column="2" Grid.RowSpan="3" Margin="0,3,3,0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="#FF088EFF" BorderThickness="2" Margin="0 0 0 3">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Occupancy Rate Details" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Segoe UI" FontWeight="Bold" Foreground="#FF088EFF" FontSize="25" Margin="10 40 10 10"/>
+                    <StackPanel Grid.Row="1">
+                        <StackPanel Orientation="Horizontal" Margin="20 5"/>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="OCCUPANCY RATE NAME" Width="208" Margin="3" Padding="0 5"/>
+                            <dxe:TextEdit x:Name="txtOccupancyRateType" Grid.Column="1" Margin="3" Padding="0 5" FontFamily="Segoe UI" Width="176" IsReadOnly="True"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="OCCUPANCY RATE TYPE" Width="208" Margin="3" Padding="0 5"/>
+                            <dxe:TextEdit x:Name="txtOccupancyRateName" Grid.Column="1" Margin="3" Padding="0 5" FontFamily="Segoe UI" Width="176" IsReadOnly="True"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="OCCUPANCY RATE AMOUNT" Width="208" Margin="3" Padding="0 5"/>
+                            <dxe:TextEdit x:Name="txtOccupancyRateAmount" Grid.Column="1" Margin="3" Padding="0 5" FontFamily="Segoe UI" Width="175" IsReadOnly="True"  MaskType="Numeric" Mask="n2" MaskUseAsDisplayFormat="True"/>
+                        </StackPanel>
+                             <StackPanel Orientation="Horizontal" Margin="20 5"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+        <Border Grid.Row="2" Grid.Column="1" Margin="3 0 3 3" Background="#FF088EFF">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBlock FontSize="15" FontFamily="Segoe UI" Foreground="White" Margin="5" Text="Total Occupancy Rate: " />
+                <TextBlock x:Name="blkTotal" FontSize="15" FontWeight="Bold" Foreground="White" Margin="5 5 20 5" Text="" />
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</UserControl>
+
+

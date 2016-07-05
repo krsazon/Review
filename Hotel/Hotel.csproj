@@ -1,0 +1,823 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B3D2B0D-7C5D-412B-8C75-DE5CEF286417}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hotel</RootNamespace>
+    <AssemblyName>Hotel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.1.UI, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Carousel.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Controls.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.LayoutControl.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Printing.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Scheduler.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v14.1.UI, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.1.Extensions, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\packages\Npgsql.2.0.14.3\lib\net45\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\packages\Npgsql.2.0.14.3\lib\net45\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Booking\Page\CancelledAppointmentsPage.xaml.cs">
+      <DependentUpon>CancelledAppointmentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Page\EntriesPage.xaml.cs">
+      <DependentUpon>EntriesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Page\ReservationPage.xaml.cs">
+      <DependentUpon>ReservationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Reports\ReservationsReportData.cs" />
+    <Compile Include="Booking\Reports\ReservationsReportDesign.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Booking\Reports\ReservationsReportDesign.Designer.cs">
+      <DependentUpon>ReservationsReportDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\SubPage\FolioPage.xaml.cs">
+      <DependentUpon>FolioPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\SubPage\RoomDescriptionPage.xaml.cs">
+      <DependentUpon>RoomDescriptionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\SubPage\ViewReservationPage.xaml.cs">
+      <DependentUpon>ViewReservationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Page\CheckOutPage.xaml.cs">
+      <DependentUpon>CheckOutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Windows\AdminPermissionWindow.xaml.cs">
+      <DependentUpon>AdminPermissionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Windows\CheckInWindow.xaml.cs">
+      <DependentUpon>CheckInWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Windows\EditReservationWindow.xaml.cs">
+      <DependentUpon>EditReservationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Windows\PaymentWindow.xaml.cs">
+      <DependentUpon>PaymentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Windows\ReservationListWindow.xaml.cs">
+      <DependentUpon>ReservationListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Windows\ReservationWindow.xaml.cs">
+      <DependentUpon>ReservationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Windows\RoomListWindow.xaml.cs">
+      <DependentUpon>RoomListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Windows\RoomSelectorWindow.xaml.cs">
+      <DependentUpon>RoomSelectorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Windows\TransactionItemWindow.xaml.cs">
+      <DependentUpon>TransactionItemWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Windows\TransferWindow.xaml.cs">
+      <DependentUpon>TransferWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Page\DiscountPage.xaml.cs">
+      <DependentUpon>DiscountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Page\HolidayRatePage.xaml.cs">
+      <DependentUpon>HolidayRatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Page\ItemGroupPage.xaml.cs">
+      <DependentUpon>ItemGroupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Page\ItemPage.xaml.cs">
+      <DependentUpon>ItemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Page\OccupancyRatePage.xaml.cs">
+      <DependentUpon>OccupancyRatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Page\RoomEquipmentPage.xaml.cs">
+      <DependentUpon>RoomEquipmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Page\RoomPage.xaml.cs">
+      <DependentUpon>RoomPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Page\RoomTypePage.xaml.cs">
+      <DependentUpon>RoomTypePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Page\StaffPage.xaml.cs">
+      <DependentUpon>StaffPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Page\StaffPositionPage.xaml.cs">
+      <DependentUpon>StaffPositionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Reports\DiscountReportData.cs" />
+    <Compile Include="MasterData\Reports\DiscountReportDesign.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MasterData\Reports\DiscountReportDesign.Designer.cs">
+      <DependentUpon>DiscountReportDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Reports\HolidayRateReportData.cs" />
+    <Compile Include="MasterData\Reports\HolidayReportDesign.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MasterData\Reports\HolidayReportDesign.designer.cs">
+      <DependentUpon>HolidayReportDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Reports\ItemGroupReportData.cs" />
+    <Compile Include="MasterData\Reports\ItemGroupReportDesign.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MasterData\Reports\ItemGroupReportDesign.designer.cs">
+      <DependentUpon>ItemGroupReportDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Reports\ItemReportData.cs" />
+    <Compile Include="MasterData\Reports\ItemReportDesign.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MasterData\Reports\ItemReportDesign.designer.cs">
+      <DependentUpon>ItemReportDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Reports\RoomReportData.cs" />
+    <Compile Include="MasterData\Reports\RoomReportDesign.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MasterData\Reports\RoomReportDesign.designer.cs">
+      <DependentUpon>RoomReportDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Reports\StaffReportData.cs" />
+    <Compile Include="MasterData\Reports\StaffReportDesign.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MasterData\Reports\StaffReportDesign.designer.cs">
+      <DependentUpon>StaffReportDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Windows\DiscountsWindow.xaml.cs">
+      <DependentUpon>DiscountsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Windows\DiscountWindow.xaml.cs">
+      <DependentUpon>DiscountWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Windows\HolidayRateWindow.xaml.cs">
+      <DependentUpon>HolidayRateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Windows\ImportEquipmentWindow.xaml.cs">
+      <DependentUpon>ImportEquipmentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Windows\ItemGroupListWindow.xaml.cs">
+      <DependentUpon>ItemGroupListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Windows\ItemWindow.xaml.cs">
+      <DependentUpon>ItemWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Windows\OccupancyRateWindow.xaml.cs">
+      <DependentUpon>OccupancyRateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Windows\RoomEquipmentWindow.xaml.cs">
+      <DependentUpon>RoomEquipmentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Windows\RoomTypeRateWindow.xaml.cs">
+      <DependentUpon>RoomTypeRateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Windows\RoomTypeWindow.xaml.cs">
+      <DependentUpon>RoomTypeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Windows\RoomWindow.xaml.cs">
+      <DependentUpon>RoomWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Windows\StaffPositionWindow.xaml.cs">
+      <DependentUpon>StaffPositionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Windows\StaffWindow.xaml.cs">
+      <DependentUpon>StaffWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DatabaseContext.cs" />
+    <Compile Include="Models\Discount.cs" />
+    <Compile Include="Models\Equipment.cs" />
+    <Compile Include="Models\HolidayRate.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\ItemGroup.cs" />
+    <Compile Include="Models\MethodsClass.cs" />
+    <Compile Include="Models\OccupancyRate.cs" />
+    <Compile Include="Models\Parameter.cs" />
+    <Compile Include="Models\Reservation.cs" />
+    <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\RoomEquipment.cs" />
+    <Compile Include="Models\RoomType.cs" />
+    <Compile Include="Models\RoomTypeRate.cs" />
+    <Compile Include="Models\Staff.cs" />
+    <Compile Include="Models\StaffPosition.cs" />
+    <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Models\TransactionItem.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserGroup.cs" />
+    <Compile Include="Shared\Page\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\Page\MainViewPage.xaml.cs">
+      <DependentUpon>MainViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\Windows\MessageBoxNotification.xaml.cs">
+      <DependentUpon>MessageBoxNotification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\Windows\MessageBoxYesNo.xaml.cs">
+      <DependentUpon>MessageBoxYesNo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\Windows\SystemParameterWindow.xaml.cs">
+      <DependentUpon>SystemParameterWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Users\SubViews\RestrictionPage.xaml.cs">
+      <DependentUpon>RestrictionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Views\UserGroupView.xaml.cs">
+      <DependentUpon>UserGroupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Views\UserView.xaml.cs">
+      <DependentUpon>UserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Windows\UserGroupWindow.xaml.cs">
+      <DependentUpon>UserGroupWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Windows\UserWindow.xaml.cs">
+      <DependentUpon>UserWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window2.xaml.cs">
+      <DependentUpon>Window2.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Booking\Page\CancelledAppointmentsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Booking\Page\EntriesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Booking\Page\ReservationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Booking\SubPage\FolioPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Booking\SubPage\RoomDescriptionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Booking\SubPage\ViewReservationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Booking\Page\CheckOutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Booking\Windows\AdminPermissionWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Booking\Windows\CheckInWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Booking\Windows\EditReservationWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Booking\Windows\PaymentWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Booking\Windows\ReservationListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Booking\Windows\ReservationWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Booking\Windows\RoomListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Booking\Windows\RoomSelectorWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Booking\Windows\TransactionItemWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Booking\Windows\TransferWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MasterData\Page\DiscountPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Page\HolidayRatePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Page\ItemGroupPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Page\ItemPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Page\OccupancyRatePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Page\RoomEquipmentPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Page\RoomPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Page\RoomTypePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Page\StaffPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Page\StaffPositionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Windows\DiscountsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Windows\DiscountWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Windows\HolidayRateWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Windows\ImportEquipmentWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Windows\ItemGroupListWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Windows\ItemWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Windows\OccupancyRateWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Windows\RoomEquipmentWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Windows\RoomTypeRateWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Windows\RoomTypeWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Windows\RoomWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Windows\StaffPositionWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterData\Windows\StaffWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shared\Page\LoginPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shared\Page\MainMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shared\Page\MainViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shared\Windows\MessageBoxNotification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shared\Windows\MessageBoxYesNo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shared\Windows\SystemParameterWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Users\SubViews\RestrictionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Users\Views\UserGroupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Users\Views\UserView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Users\Windows\UserGroupWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Users\Windows\UserWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Variables.cs" />
+    <Compile Include="Shared\Page\MainMenuPage.xaml.cs">
+      <DependentUpon>MainMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Booking\Reports\ReservationsReportDesign.resx">
+      <DependentUpon>ReservationsReportDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Reports\HolidayReportDesign.resx">
+      <DependentUpon>HolidayReportDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Reports\ItemGroupReportDesign.resx">
+      <DependentUpon>ItemGroupReportDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Reports\ItemReportDesign.resx">
+      <DependentUpon>ItemReportDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Reports\RoomReportDesign.resx">
+      <DependentUpon>RoomReportDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Reports\StaffReportDesign.resx">
+      <DependentUpon>StaffReportDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Hotel.Booking.Reports.ReservationsReportData.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Back.png" />
+    <Resource Include="Images\Blue-Back.png" />
+    <Resource Include="Images\Blue-Books.png" />
+    <Resource Include="Images\Blue-Bullets.png" />
+    <Resource Include="Images\Blue-Check-Box.png" />
+    <Resource Include="Images\Blue-Clean.png" />
+    <Resource Include="Images\Blue-Close.png" />
+    <Resource Include="Images\Blue-Close2.png" />
+    <Resource Include="Images\Blue-Command-Undo.png" />
+    <Resource Include="Images\Blue-Data-Export.png" />
+    <Resource Include="Images\Blue-Data-Import.png" />
+    <Resource Include="Images\Blue-Data.png" />
+    <Resource Include="Images\Blue-Delete.png" />
+    <Resource Include="Images\Blue-Edit.png" />
+    <Resource Include="Images\Blue-Equalizer.png" />
+    <Resource Include="Images\Blue-Excel-Import Export.png" />
+    <Resource Include="Images\Blue-Find.png" />
+    <Resource Include="Images\Blue-Folder-Picture.png" />
+    <Resource Include="Images\Blue-Graduate-Cap.png" />
+    <Resource Include="Images\Blue-Home.png" />
+    <Resource Include="Images\Blue-Numbering.png" />
+    <Resource Include="Images\Blue-Plus.png" />
+    <Resource Include="Images\Blue-Printer.png" />
+    <Resource Include="Images\Blue-Reload.png" />
+    <Resource Include="Images\Blue-Room.png" />
+    <Resource Include="Images\Blue-Save.png" />
+    <Resource Include="Images\Blue-School.png" />
+    <Resource Include="Images\Blue-Select.png" />
+    <Resource Include="Images\Blue-Student-Read-02.png" />
+    <Resource Include="Images\Blue-Teacher-01.png" />
+    <Resource Include="Images\Books.png" />
+    <Resource Include="Images\Boy.png" />
+    <Resource Include="Images\Boy2.png" />
+    <Resource Include="Images\Bullets.png" />
+    <Resource Include="Images\Check-03.png" />
+    <Resource Include="Images\Check.png" />
+    <Resource Include="Images\Close.png" />
+    <Resource Include="Images\Close2.png" />
+    <Resource Include="Images\Copy.png" />
+    <Resource Include="Images\Data-Export.png" />
+    <Resource Include="Images\Data-Import.png" />
+    <Resource Include="Images\Data.png" />
+    <Resource Include="Images\Delete.png" />
+    <Resource Include="Images\Documents-02.png" />
+    <Resource Include="Images\Edit.png" />
+    <Resource Include="Images\Equalizer.png" />
+    <Resource Include="Images\Excel-Import Export.png" />
+    <Resource Include="Images\Find.png" />
+    <Resource Include="Images\Formula-Support.png" />
+    <Resource Include="Images\Gear-01.png" />
+    <Resource Include="Images\Gear.png" />
+    <Resource Include="Images\Graduate-Cap.png" />
+    <Resource Include="Images\Home-02.png" />
+    <Resource Include="Images\Home.png" />
+    <Resource Include="Images\ID-Card.png" />
+    <Resource Include="Images\Logout.png" />
+    <Resource Include="Images\Map-Location.png" />
+    <Resource Include="Images\Next2.png" />
+    <Resource Include="Images\no_image.png" />
+    <Resource Include="Images\no_photo.png" />
+    <Resource Include="Images\Plus.png" />
+    <Resource Include="Images\Previous2.png" />
+    <Resource Include="Images\Printer.png" />
+    <Resource Include="Images\Reload.png" />
+    <Resource Include="Images\Save2.png" />
+    <Resource Include="Images\School.png" />
+    <Resource Include="Images\Search.png" />
+    <Resource Include="Images\Student-Read-02.png" />
+    <Resource Include="Images\Teacher-01.png" />
+    <Resource Include="Images\Windows8Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AppointmentBlue.png" />
+    <Resource Include="Images\AppointmentWhite.png" />
+    <Resource Include="Images\Cupboard - skyblue.png" />
+    <Resource Include="Images\Cupboard - white.png" />
+    <Resource Include="Images\FolioBlue.png" />
+    <Resource Include="Images\FolioWhite.png" />
+    <Resource Include="Images\RefreshBlue.png" />
+    <Resource Include="Images\RefreshWhite.png" />
+    <Resource Include="Images\ResumeBlue.png" />
+    <Resource Include="Images\ResumeWhite.png" />
+    <Resource Include="Images\UpdateBlue.png" />
+    <Resource Include="Images\UpdateWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Bed-01.png" />
+    <Resource Include="Images\Category.png" />
+    <Resource Include="Images\Food..png" />
+    <Resource Include="Images\House.png" />
+    <Resource Include="Images\Houses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Philippine-Pesoblu.png" />
+    <Resource Include="Images\Receiptblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PencilBlue.png" />
+    <Resource Include="Images\PencilWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Exit Blue.png" />
+    <Resource Include="Images\Exit White.png" />
+    <Resource Include="Images\TypewriterBlue.png" />
+    <Resource Include="Images\TypewriterWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LoginBlue.png" />
+    <Resource Include="Images\LoginWhite.png" />
+    <Resource Include="Images\ReservationBlue.png" />
+    <Resource Include="Images\ReservationWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\View-Details-01-Blue.png" />
+    <Resource Include="Images\View-Details-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Calendar-02-WF-Blue.png" />
+    <Resource Include="Images\Calendar-02-WF-White.png" />
+    <Resource Include="Images\Calendar-03-WF-Blue.png" />
+    <Resource Include="Images\Calendar-03-WF-White.png" />
+    <Resource Include="Images\Calendar-WF-Blue.png" />
+    <Resource Include="Images\Calendar-WF-White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Calendar-01-WF-Blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Calendar-Date-01-Blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Next-02-WF-Blue.png" />
+    <Resource Include="Images\Next-02-WF-Reverse-Blue.png" />
+    <Resource Include="Images\Next-02-WF-Reverse.png" />
+    <Resource Include="Images\Next-02-WF.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\HolidayWhit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cancel.png" />
+    <Resource Include="Images\CancelWhite.png" />
+    <Resource Include="Images\DiscountWhite.png" />
+    <Resource Include="Images\Philippine-Pesowayt.png" />
+    <Resource Include="Images\SetupWhite.png" />
+    <Resource Include="Images\StaffPositionWhite.png" />
+    <Resource Include="Images\SystemParameterWhite.png" />
+    <Resource Include="Images\UserGroupWhite.png" />
+    <Resource Include="Images\UserListWhite.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

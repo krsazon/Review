@@ -1,0 +1,272 @@
+﻿<UserControl x:Class="Hotel.Booking.Page.CancelledAppointments"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" dx:ThemeManager.ThemeName="Office2013"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1100" Loaded="UserControl_Loaded">
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="198*" />
+            <RowDefinition Height="397*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.ColumnSpan="2" Grid.Row="0" Margin="0,-1,0,1">
+            <TextBlock Text="Cancelled Appointments" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Segoe UI" FontWeight="Bold" Foreground="#FF088EFF" FontSize="25" Margin="10 0 0 0"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+
+                <StackPanel Margin="5 0 0 5" VerticalAlignment="Center">
+                    <Button x:Name="btnRefresh"   Margin="5" Height="40" Width="40" Style="{DynamicResource ResourceKey=ButtonCleanStyle3}" Click="btnCheckIn_Click">
+                        <Image Source="/Images/Edit.png" Stretch="Uniform"/>
+                    </Button>
+                    <TextBlock Text="Refresh" FontFamily="Segoe UI" FontSize="13" FontWeight="SemiBold" Foreground="#0096ff" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Margin="5 0 0 5" VerticalAlignment="Center">
+                    <Button x:Name="btnPrint"   Margin="5" Height="40" Width="40" Style="{DynamicResource ResourceKey=ButtonCleanStyle3}">
+                        <Image Source="/Images/Printer.png" Stretch="Uniform"/>
+                    </Button>
+                    <TextBlock Text="Print" FontFamily="Segoe UI" FontSize="13" FontWeight="SemiBold" Foreground="#0096ff" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+
+        <Border Grid.Row="1" Grid.RowSpan="3" Padding="10" Width="90">
+            <Grid>
+                <StackPanel HorizontalAlignment="Center"  VerticalAlignment="Top">
+                    <StackPanel Margin="0 0 0 5">
+                        <StackPanel Margin="5 0 0 5">
+                            <Button x:Name="btnCheckIn" Margin="5" Height="50" Width="50" Style="{DynamicResource ResourceKey=ButtonEllipseTransparent}" Click="btnCheckIn_Click">
+                                <Image Source="/Images/AppointmentBlue.png" Stretch="Uniform"/>
+                            </Button>
+                            <TextBlock Text="Check-Ins" FontFamily="Segoe UI" FontSize="12" FontWeight="SemiBold" Foreground="#0096ff" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Margin="5 0 0 5">
+                            <Button x:Name="btnViewReserve" Margin="5" Height="50" Width="50" Style="{DynamicResource ResourceKey=ButtonEllipseTransparent}" Click="btnViewReserve_Click">
+                                <Image Source="/Images/Cupboard - skyblue.png" Stretch="Uniform"/>
+                            </Button>
+                            <TextBlock Text="Reservations" FontFamily="Segoe UI" FontSize="11" FontWeight="SemiBold" Foreground="#0096ff" HorizontalAlignment="Center"/>
+                        </StackPanel>
+
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+
+                </StackPanel>
+
+                <StackPanel Margin="0 0 0 5" VerticalAlignment="Bottom">
+                    <Button x:Name="btnHome" Margin="5" Height="50" Width="50" Style="{DynamicResource ResourceKey=ButtonEllipseTransparent}" Click="btnHome_Click">
+                        <Image Source="/images/Blue-Home.png" Stretch="Uniform"/>
+                    </Button>
+                    <TextBlock Text="HOME" FontFamily="Segoe UI" FontSize="13" FontWeight="SemiBold" Foreground="#0096ff" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <dxg:GridControl x:Name="dgCheckOut" Grid.Row="1" Grid.Column="1" AutoGenerateColumns="None" Margin="3 0 3 3" SelectedItemChanged="dgCheckOut_SelectedItemChanged" Visibility="Visible" Grid.RowSpan="2">
+            <dxg:GridControl.View>
+                <dxg:TableView x:Name="viewCheckOut" ShowTotalSummary="False" ShowGroupPanel="False" NavigationStyle="Row" AllowEditing="False"/>
+            </dxg:GridControl.View>
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn Header="Transaction Id" FieldName="TransactionId" Visible="False"/>
+
+                <dxg:GridColumn Header="Room Number" FieldName="RoomNumber"/>
+                <dxg:GridColumn Header="GuestNumber" FieldName="GuestNumber"/>
+                <dxg:GridColumn Header="Room Slip Number" FieldName="RoomSlipNumber"/>
+                <dxg:GridColumn Header="Check In Date" FieldName="CheckInDate" />
+                <dxg:GridColumn Header="Check In Time" FieldName="CheckInTime"/>
+                <dxg:GridColumn Header="Number Of Hours" FieldName="NumberOfHours"/>
+                <dxg:GridColumn Header="Number Of Days" FieldName="NumberOfDays"/>
+                <dxg:GridColumn Header="Discount Card" FieldName="DiscountCard"/>
+                <dxg:GridColumn Header="Discount ID" FieldName="DiscountId"/>
+                <dxg:GridColumn Header="Check Out Date" FieldName="CheckOutDate"/>
+                <dxg:GridColumn Header="Room Charge" FieldName="RoomCharge"/>
+                <dxg:GridColumn Header="Username" FieldName="Username"/>
+                <dxg:GridColumn Header="Discount Amount" FieldName="DiscountAmount"/>
+                <dxg:GridColumn Header="Net Amount" FieldName="NetAmount"/>
+                <dxg:GridColumn Header="Amound Paid" FieldName="AmountPaid"/>
+                <dxg:GridColumn Header="Change" FieldName="Change"/>
+                <dxg:GridColumn Header="Status" FieldName="Status"/>
+                <dxg:GridColumn Header="Room Type" FieldName="RoomTypeName"/>
+            </dxg:GridControl.Columns>
+        </dxg:GridControl>
+        <dxg:GridControl x:Name="dgReservations" Grid.Row="1" Grid.Column="1" AutoGenerateColumns="None" Margin="3 0 3 3" SelectedItemChanged="dgReservations_SelectedItemChanged" Visibility="Hidden" Grid.RowSpan="2">
+            <dxg:GridControl.View>
+                <dxg:TableView x:Name="viewReservations" ShowTotalSummary="False" ShowGroupPanel="False" NavigationStyle="Row" AllowEditing="False"/>
+            </dxg:GridControl.View>
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn Header="Reservation Id" FieldName="ReservationId" Visible="False"/>
+                <dxg:GridColumn Header="Reservation Fee" FieldName="ReservationFee"/>
+                <dxg:GridColumn Header="Customer Name" FieldName="CustomerName"/>
+                <dxg:GridColumn Header="Room Number" FieldName="RoomNumber"/>
+                <dxg:GridColumn Header="Date Reserved" FieldName="DateReserved"/>
+                <dxg:GridColumn Header="Arrival Date" FieldName="ArrivalDate"/>
+                <dxg:GridColumn Header="Arrival Time" FieldName="ArrivalTime"/>
+                <dxg:GridColumn Header="Request Date" FieldName="RequestDate"/>
+                <dxg:GridColumn Header="Request Time" FieldName="RequestTime"/>
+                <dxg:GridColumn Header="Card Number" FieldName="CardNumber"/>
+                <dxg:GridColumn Header="Reservation Number" FieldName="ReservationNumber"/>
+            </dxg:GridControl.Columns>
+        </dxg:GridControl>
+
+        <Grid Grid.Row="0" Grid.Column="2" Grid.RowSpan="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+            <Border BorderBrush="#FF088EFF" Grid.RowSpan="2" Margin="0 0 0 3">
+
+                <ScrollViewer Name="hehe" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+
+                    <StackPanel Grid.Row="1">
+                        <TextBlock Name ="CancelledCheckOut" Text= "Cancelled Check-Out Details" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Segoe UI" FontWeight="Bold" Foreground="#FF088EFF" FontSize="25" Margin="10 40 10 10" Visibility="Visible"/>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock Name="lblRoomNumber" VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="ROOM NUMBER" Width="117" Margin="3" Padding="0 5" Visibility="Visible"/>
+                            <TextBlock x:Name="txtRoomNumber" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3"  FontFamily="Segoe UI" Width="255" Visibility="Visible"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock Name="lblGuestNumber" VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="GUEST NUMBER" Width="117" Margin="3" Padding="0 5" Visibility="Visible"/>
+                            <TextBlock x:Name="txtGuestNumber" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI" Width="255" Visibility="Visible"/>
+                        </StackPanel>
+
+                        
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock Name="lblRoomSlipNumber" VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="ROOM SLIP NUMBER" Width="117" Margin="3" Padding="0 5" Visibility="Visible"/>
+                            <TextBlock x:Name="txtRoomSlipNumber" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI" Width="255" Visibility="Visible"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock Name="lblCheckInDate" VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="CHECK IN DATE" Width="117" Margin="3" Padding="0 5"  Visibility="Visible"/>
+                            <TextBlock x:Name="txtCheckInDate" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI" Width="255"  Visibility="Visible"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock Name="lblCheckInTime" VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="CHECK IN TIME" Width="117" Margin="3" Padding="0 5" Visibility="Visible"/>
+                            <TextBlock x:Name="txtCheckInTime" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI" Width="255" Visibility="Visible"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock Name="lblNumberOfDays" VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="NUMBER OF DAYS" Width="117" Margin="3" Padding="0 5"  Visibility="Visible"/>
+                            <TextBlock x:Name="txtNumberOfDays" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3"  FontFamily="Segoe UI" Width="255" Visibility="Visible"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock Name="lblNumberOfHours" VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="NUMBER OF HOURS" Width="117" Margin="3" Padding="0 5" Visibility="Visible"/>
+                            <TextBlock x:Name="txtNumberOfHours" Foreground="#FF088EFF" FontWeight="SemiBold" Margin="3" FontFamily="Segoe UI" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Visibility="Visible"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock Name="lblDiscountCard" VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="DISCOUNT CARD" Width="117" Margin="3" Padding="0 5" Visibility="Visible"/>
+                            <TextBlock x:Name="txtDiscountCard" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI"  Width="255"  TextWrapping="Wrap" Visibility="Visible" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock Name="lblDiscountId" VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="DISCOUNT ID" Width="117" Margin="3" Padding="0 5" Visibility="Visible"/>
+                            <TextBlock x:Name="txtDiscountId" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI"  Width="255"  TextWrapping="Wrap" Visibility="Visible" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock Name="lblCheckOutDate" VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="CHECK OUT DATE" Width="117" Margin="3" Padding="0 5"/>
+                            <TextBlock x:Name="txtCheckOutDate" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI"  Width="255"  TextWrapping="Wrap" Visibility="Visible" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock Name="lblRoomCharge" VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="ROOM CHARGE" Width="117" Margin="3" Padding="0 5" Visibility="Visible"/>
+                            <TextBlock x:Name="txtRoomCharge" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI"  Width="255"  TextWrapping="Wrap" Visibility="Visible" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock Name="lblUsername" VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="USERNAME" Width="117" Margin="3" Padding="0 5" Visibility="Visible"/>
+                            <TextBlock x:Name="txtUsername" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI"  Width="255"  TextWrapping="Wrap" Visibility="Visible" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock Name="lblNetAmount" VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="NET AMOUNT" Width="117" Margin="3" Padding="0 5" Visibility="Visible"/>
+                            <TextBlock x:Name="txtNetAmount" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI"  Width="255"  TextWrapping="Wrap" Visibility="Visible" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock Name="lblAmountPaid" VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="AMOUNT PAID" Width="117" Margin="3" Padding="0 5" Visibility="Visible"/>
+                            <TextBlock x:Name="txtAmountPaid" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI"  Width="255"  TextWrapping="Wrap" Visibility="Visible" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock Name="lblChange" VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="CHANGE" Width="117" Margin="3" Padding="0 5" Visibility="Visible"/>
+                            <TextBlock x:Name="txtChange" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI"  Width="255"  TextWrapping="Wrap" Visibility="Visible" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock Name="lblStatus" VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="STATUS" Width="117" Margin="3" Padding="0 5" Visibility="Visible"/>
+                            <TextBlock x:Name="txtStatus" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI"  Width="255"  TextWrapping="Wrap" Visibility="Visible" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock Name="lblRoomTypeName" VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="ROOM TYPE" Width="117" Margin="3" Padding="0 5" Visibility="Visible"/>
+                            <TextBlock x:Name="txtRoomTypeName" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI"  Width="255"  TextWrapping="Wrap" Visibility="Visible" />
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+
+            </Border>
+            <Border BorderBrush="#FF088EFF" Grid.RowSpan="2" Margin="0 0 0 3">
+
+                <StackPanel Grid.Row="1">
+                    <TextBlock Name ="CancelledReservations" Text= "Cancelled Reservation Details" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Segoe UI" FontWeight="Bold" Foreground="#FF088EFF" FontSize="25" Margin="10 40 10 10" Visibility="Hidden"/>
+                    <StackPanel Orientation="Horizontal" Margin="20 5">
+                        <TextBlock Name="lblReservationId1" VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="RESERVATION ID" Width="117" Margin="3" Padding="0 5" Visibility="Hidden"/>
+                        <TextBlock x:Name="txtReservationId1" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3"  FontFamily="Segoe UI" Width="255" Visibility="Hidden"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20 5">
+                        <TextBlock Name="lblReservationFee" VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="RESERVATION FEE" Width="117" Margin="3" Padding="0 5" Visibility="Hidden"/>
+                        <TextBlock x:Name="txtReservationFee" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI" Width="255" Visibility="Hidden"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="20 5">
+                        <TextBlock Name="lblCustomerName" VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="CUSTOMER NAME" Width="117" Margin="3" Padding="0 5" Visibility="Hidden"/>
+                        <TextBlock x:Name="txtCustomerName" Foreground="#FF088EFF" FontWeight="SemiBold" Margin="3" FontFamily="Segoe UI" Width="255" Visibility="Hidden"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20 5">
+                        <TextBlock Name="lblRoomNumber1" VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="ROOM NUMBER" Width="117" Margin="3" Padding="0 5" Visibility="Hidden"/>
+                        <TextBlock x:Name="txtRoomNumber1" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI" Width="255" Visibility="Hidden"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20 5">
+                        <TextBlock Name="lblDateReserved" VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="DATE RESERVED" Width="117" Margin="3" Padding="0 5" Visibility="Hidden"/>
+                        <TextBlock x:Name="txtDateReserved" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI" Width="255" Visibility="Hidden"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20 5">
+                        <TextBlock Name="lblArrivalDate" VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="ARRIVAL DATE" Width="117" Margin="3" Padding="0 5" Visibility="Hidden"/>
+                        <TextBlock x:Name="txtArrivalDate" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI" Width="255" Visibility="Hidden"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20 5">
+                        <TextBlock Name="lblArrivalTime" VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="ARRIVAL TIME" Width="117" Margin="3" Padding="0 5" Visibility="Hidden"/>
+                        <TextBlock x:Name="txtArrivalTime" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3"  FontFamily="Segoe UI" Width="255" Visibility="Hidden"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20 5">
+                        <TextBlock Name="lblRequestDate" VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="REQUEST DATE" Width="117" Margin="3" Padding="0 5" Visibility="Hidden"/>
+                        <TextBlock x:Name="txtRequestDate" Foreground="#FF088EFF" FontWeight="SemiBold" Margin="3" FontFamily="Segoe UI" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" Visibility="Hidden"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20 5">
+                        <TextBlock Name="lblRequestTime" VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="REQUEST TIME" Width="117" Margin="3" Padding="0 5" Visibility="Hidden"/>
+                        <TextBlock x:Name="txtRequestTime" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI"  Width="255"  TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" Visibility="Hidden"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20 5">
+                        <TextBlock Name="lblCardNumber" VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="CARD NUMBER" Width="117" Margin="3" Padding="0 5" Visibility="Hidden"/>
+                        <TextBlock x:Name="txtCardNumber" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI"  Width="255"  TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" Visibility="Hidden"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20 5">
+                        <TextBlock Name="lblReservationNumber" VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="RESERVATION NUMBER" Width="117" Margin="3" Padding="0 5" Visibility="Hidden"/>
+                        <TextBlock x:Name="txtReservationNumber" Foreground="#FF088EFF" FontWeight="SemiBold" Grid.Column="1" Margin="3" FontFamily="Segoe UI"  Width="255"  TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" Visibility="Hidden"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20 5"/>
+                </StackPanel>
+
+            </Border>
+        </Grid>
+
+        <Border Grid.Row="3" Grid.Column="1"  Background="#FF088EFF" Margin="3, 0, 3, 3">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" >
+                <TextBlock FontSize="15" FontFamily="Segoe UI" Foreground="White" Margin="5" Text="Total Cancelled Appointments: " />
+                <TextBlock x:Name="blkTotal" FontSize="15" FontWeight="Bold" Foreground="White" Margin="5 5 0 5" Text="0" />
+            </StackPanel>
+        </Border>
+        <!--<xctk:BusyIndicator x:Name="busyIndicator" Grid.ColumnSpan="3" Grid.RowSpan="4"/>-->
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,29 @@
+﻿<Window x:Class="Hotel.Booking.Windows.AdminPermissionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        dx:ThemeManager.ThemeName="Office2013"
+        Title="AdminPermissionWindow" Height="500" Width="450" Background="Gray"  WindowStyle="None" ResizeMode="NoResize" Closing="Window_Closing" Loaded="Window_Loaded">
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+            <Button x:Name="btnSave" DockPanel.Dock="Bottom" Style="{DynamicResource ButtonEllipseTransparent}" Height="50" Width="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20 0 5 20" Click="btnSave_Click">
+                <Image Source="/Images/Save2.png"/>
+            </Button>
+            <Button x:Name="btnClose" Style="{DynamicResource ButtonEllipseTransparent}" Height="50" Width="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5 0 0 20" Click="btnClose_Click">
+                <Image Source="/Images/Close.png"/>
+            </Button>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Text="LOGIN" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Segoe UI" FontWeight="Bold" Foreground="White" FontSize="25" Margin="10 40 10 10"/>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="USERNAME" Width="117" Margin="3" Padding="0 5"/>
+                <dxe:TextEdit x:Name="txtUsername" Grid.Column="1"  Margin="3" Padding="0 5" FontFamily="Segoe UI" Width="255"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 5">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" Text="PASSWORD" Width="117" Margin="3" Padding="0 5"/>
+                <dxe:TextEdit x:Name="txtPassword" Margin="3" Padding="0 5" FontFamily="Segoe UI" Width="255" />
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>

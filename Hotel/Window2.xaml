@@ -1,0 +1,17 @@
+﻿<Window x:Class="Hotel.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Window2" Height="300" Width="300">
+    <DockPanel>
+    <Grid DockPanel.Dock="Top">
+            <Label Content="Julf" />
+        </Grid>
+
+        <Grid DockPanel.Dock="Bottom">
+            <Label Content="Vincent" />
+        </Grid>
+        <Grid>
+            <Label Content="Robin" />
+        </Grid>
+    </DockPanel>
+</Window>

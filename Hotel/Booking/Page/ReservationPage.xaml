@@ -1,0 +1,166 @@
+﻿<UserControl x:Class="Hotel.Booking.Page.ReservationPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             dx:ThemeManager.ThemeName="Office2013"
+             mc:Ignorable="d" 
+           d:DesignHeight="700" d:DesignWidth="1100" Loaded="UserControl_Loaded">
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="35*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.ColumnSpan="2">
+            <TextBlock Text="Reservation Entries" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Segoe UI" FontWeight="Bold" Foreground="#FF088EFF" FontSize="25" Margin="10 0 0 0"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+
+                <dxe:DateEdit Name="dtReserved" Width="130" Height="30" Margin="5" VerticalAlignment="Center"/>
+                <dxe:DateEdit Name="dtArrival"  Width="130" Height="30" Margin="5" VerticalAlignment="Center"/>
+
+
+                <StackPanel Margin="5 0 0 5">
+                    <Button x:Name="btnRefresh" Margin="5" Height="40" Width="40" Style="{DynamicResource ResourceKey=ButtonCleanStyle3}" Click="btnRefresh_Click" >
+                        <Image Source="/Images/Reload.png" Stretch="Uniform"/>
+                    </Button>
+                    <TextBlock Text="Refresh" FontFamily="Segoe UI" FontSize="13" FontWeight="SemiBold" Foreground="#0096ff" HorizontalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Margin="5 0 0 5">
+                    <Button x:Name="btnEdit" Margin="5" Height="40" Width="40" Style="{DynamicResource ResourceKey=ButtonCleanStyle3}" Click="btnEdit_Click">
+                        <Image Source="/Images/Edit.png" Stretch="Uniform"/>
+                    </Button>
+                    <TextBlock Text="Edit" FontFamily="Segoe UI" FontSize="13" FontWeight="SemiBold" Foreground="#0096ff" HorizontalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Margin="5 0 0 5">
+                    <Button x:Name="btnCancel" Margin="5" Height="40" Width="40" Style="{DynamicResource ResourceKey=ButtonCleanStyle3}" Click="btnCancel_Click">
+                        <Image Source="/Images/Close.png" Stretch="Uniform"/>
+                    </Button>
+                    <TextBlock Text="Cancel" FontFamily="Segoe UI" FontSize="13" FontWeight="SemiBold" Foreground="#0096ff" HorizontalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Margin="5 0 0 5">
+                    <Button x:Name="btnPrint" Margin="5" Height="40" Width="40" Style="{DynamicResource ResourceKey=ButtonCleanStyle3}" Click="btnPrint_Click" >
+                        <Image Source="/Images/Printer.png" Stretch="Uniform"/>
+                    </Button>
+                    <TextBlock Text="Print" FontFamily="Segoe UI" FontSize="13" FontWeight="SemiBold" Foreground="#0096ff" HorizontalAlignment="Center"/>
+                </StackPanel>
+
+
+            </StackPanel>
+        </Grid>
+
+        <Border Grid.Row="1" Grid.RowSpan="3" Padding="10" Width="90" >
+            <Grid>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                    
+                </StackPanel>
+
+                <StackPanel Margin="0 0 0 5" VerticalAlignment="Bottom">
+                    <Button x:Name="btnHome" Margin="5" Height="50" Width="50" Style="{DynamicResource ResourceKey=ButtonEllipseTransparent}" Click="btnHome_Click">
+                        <Image Source="/images/Blue-Home.png" Stretch="Uniform"/>
+                    </Button>
+                    <TextBlock Text="HOME" FontFamily="Segoe UI" FontSize="13" FontWeight="SemiBold" Foreground="#0096ff" HorizontalAlignment="Center"/>
+                </StackPanel>
+
+               
+
+            </Grid>
+        </Border>
+        <dxg:GridControl x:Name="dgReservations"  Grid.Column="1" AutoGenerateColumns="None" Grid.Row="1" Grid.RowSpan="2" SelectedItemChanged="dgReservations_SelectedItemChanged">
+            <dxg:GridControl.View>
+                <dxg:TableView x:Name="viewReservations" ShowTotalSummary="False" ShowGroupPanel="False" NavigationStyle="Row" AllowEditing="False"/>
+            </dxg:GridControl.View>
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn Header="Reservation ID" FieldName="ReservationId" Visible="False"/>
+                <dxg:GridColumn Header="Customer Name" FieldName="CustomerName"/>
+                <dxg:GridColumn Header="Reservation Fee" FieldName="ReservationFee"/>
+                <dxg:GridColumn Header="Room No" FieldName="RoomNumber"/>
+                <dxg:GridColumn Header="Date Reserved" FieldName="DateReserved"/>
+                <dxg:GridColumn Header="Arrival Date" FieldName="ArrivalDate"/>
+                <dxg:GridColumn Header="Arrival Time" FieldName="ArrivalTime"/>
+                <dxg:GridColumn Header="Request Date" FieldName="RequestDate"/>
+                <dxg:GridColumn Header="Request Time" FieldName="RequestTime"/>
+                <dxg:GridColumn Header="Card Number" FieldName="CardNumber"/>
+                <dxg:GridColumn Header="Reservation Number" FieldName="ReservationNumber"/>
+            </dxg:GridControl.Columns>
+        </dxg:GridControl>
+        <Grid Grid.Row="0" Grid.Column="2" Grid.RowSpan="5" Margin="0 3 3 3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition  />
+            </Grid.RowDefinitions>
+            <Border BorderBrush="#FF088EFF" Grid.RowSpan="2" Margin="0 0 0 3">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel Grid.Row="1">
+                        <TextBlock Text="Reservation Details" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Segoe UI" FontWeight="Bold" Foreground="#FF088EFF" FontSize="25" Margin="10 40 10 10"/>
+                    <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="RESERVATION ID" Width="117" Margin="3" Padding="0 5"/>
+                            <TextBlock x:Name="txtReservationId" Grid.Column="1" Margin="3" FontFamily="Segoe UI" Width="255" Foreground="#FF088EFF" FontWeight="SemiBold"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="RESERVATION FEE" Width="117" Margin="3" Padding="0 5"/>
+                            <TextBlock x:Name="txtReservationFee" Grid.Column="1" Margin="3" FontFamily="Segoe UI" Width="255" Foreground="#FF088EFF" FontWeight="SemiBold"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="CUSTOMER NAME" Width="117" Margin="3" Padding="0 5"/>
+                            <TextBlock x:Name="txtCustomerName" Margin="3" FontFamily="Segoe UI" Width="255" Foreground="#FF088EFF" FontWeight="SemiBold"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="ROOM NUMBER" Width="117" Margin="3" Padding="0 5"/>
+                            <TextBlock x:Name="txtRoomNumber" Grid.Column="1" Margin="3" FontFamily="Segoe UI" Width="255" Foreground="#FF088EFF" FontWeight="SemiBold"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="DATE RESERVED" Width="117" Margin="3" Padding="0 5"/>
+                            <TextBlock x:Name="txtDateReserved" Grid.Column="1" Margin="3" FontFamily="Segoe UI" Width="255" Foreground="#FF088EFF" FontWeight="SemiBold"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="ARRIVAL DATE" Width="117" Margin="3" Padding="0 5"/>
+                            <TextBlock x:Name="txtArrivalDate" Grid.Column="1" Margin="3" FontFamily="Segoe UI" Width="255" Foreground="#FF088EFF" FontWeight="SemiBold"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock VerticalAlignment="Center" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="ARRIVAL TIME" Width="117" Margin="3" Padding="0 5"/>
+                            <TextBlock x:Name="txtArrivalTime" Grid.Column="1" Margin="3" FontFamily="Segoe UI" Width="255" Foreground="#FF088EFF" FontWeight="SemiBold"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="REQUEST DATE" Width="117" Margin="3" Padding="0 5"/>
+                            <TextBlock x:Name="txtRequestDate" Margin="3" FontFamily="Segoe UI" Width="255" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Foreground="#FF088EFF"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="REQUEST TIME" Width="117" Margin="3" Padding="0 5"/>
+                            <TextBlock x:Name="txtRequestTime" Grid.Column="1" Margin="3" FontFamily="Segoe UI" Width="255" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Foreground="#FF088EFF" FontWeight="SemiBold"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="CARD NUMBER" Width="117" Margin="3" Padding="0 5"/>
+                            <TextBlock x:Name="txtCardNumber" Margin="3" Padding="0 5" FontWeight="SemiBold" FontFamily="Segoe UI" Width="255" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Foreground="#FF088EFF"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20 5">
+                            <TextBlock VerticalAlignment="Top" Foreground="#FF088EFF" FontFamily="Segoe UI" Text="RESERVATION NUMBER" Width="117" Margin="3" Padding="0 5"/>
+                            <TextBlock x:Name="ReservationNumber" Grid.Column="1" Margin="3" FontWeight="SemiBold" FontFamily="Segoe UI"  Width="255" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Foreground="#FF088EFF"/>
+                        </StackPanel>                     
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+        <Border Grid.Row="2" Grid.Column="1" Margin="3 0 3 3" Background="#FF088EFF">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBlock FontSize="15" FontFamily="Segoe UI" Foreground="White" Margin="5" Text="Total Reservations: " />
+                <TextBlock x:Name="blkTotal" FontSize="15" FontWeight="SemiBold" Foreground="White" Margin="5 5 20 5" Text="0" />
+            </StackPanel>
+        </Border>
+        <!--<xctk:BusyIndicator x:Name="busyIndicator" Grid.ColumnSpan="3" Grid.RowSpan="4"/>-->
+    </Grid>
+</UserControl>
+
